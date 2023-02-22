@@ -5,7 +5,7 @@
 /**
  * main - assigns a random number to int n everytime
  * Description: checks if positive or nagative
- * Return: Always 0 (Seun == Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
