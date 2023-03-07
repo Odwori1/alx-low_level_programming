@@ -5,6 +5,7 @@
 */
 
 void print_chessboard(char (*a)[8])
+
 {
 int row;
 int column;
