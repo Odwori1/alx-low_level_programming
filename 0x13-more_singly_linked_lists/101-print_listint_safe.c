@@ -1,40 +1,47 @@
 #include "lists.h"
 
 /**
-* print_listint_safe - Prints a listint_t linked list safely
-* @head: Pointer to the head node
+* print_listint_safe - Prints a listint_t linked list.
+* @head: Pointer to the beginning of the linked list.
 *
-* Return: Number of nodes in the list
+* Return: The number of nodes in the linked list.
 */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node1, *node2;
-	size_t count = 0;
+const listint_t *nod1, *nod2;
+size_t count = 0;
 
-	if (head == NULL)
-	exit(98);
+if (head == NULL)
+exit(98);
 
-	node1 = head;
-	node2 = head->next;
+nod1 = head;
+nod2 = head->next;
 
-	while (node2 != NULL && node2 < node1)
-	{
-	printf("[%p] %d\n", (void *) node1, node1->n);
-	count++;
-	node1 = node1->next;
-	node2 = node2->next;
-	if (node2 != NULL && node2 < node1)
-	node2 = node2->next;
-	}
+while (nod2 != NULL && nod2 < nod1)
+{
+printf("[%p] %d\n", (void *)nod1, nod1->n);
+count++;
+nod1 = nod1->next;
+nod2 = nod2->next;
 
-	printf("[%p] %d\n", (void *) node1, node1->n);
-	count++;
+if (nod2 != NULL && nod2 < nod1)
+{
+printf("[%p] %d\n", (void *)nod1, nod1->n);
+count++;
+nod1 = nod1->next;
+nod2 = nod2->next;
+}
+}
 
-	if (node2 != NULL)
-	{
-	printf("-> [%p] %d\n", (void *) node2, node2->n);
-	count++;
-	}
+if (nod2 != NULL)
+{
+printf("[%p] %d\n", (void *)nod1, nod1->n);
+count++;
+nod1 = nod1->next;
+}
 
-	return (count);
+printf("-> [%p] %d\n", (void *)nod1, nod1->n);
+count++;
+
+return (count);
 }
