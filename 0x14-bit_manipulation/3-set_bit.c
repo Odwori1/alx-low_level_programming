@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* get_bit - sets the value of a bit to 1 at a given index
+* set_bit - sets the value of a bit to 1 at a given index
 * @n: a pointer to the number containing the bit
 * @index: the index of the bit, starting from 0
 *
